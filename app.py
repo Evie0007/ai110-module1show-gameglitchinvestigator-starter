@@ -107,11 +107,8 @@ with st.expander("Developer Debug Info"):
 
 with st.form("guess_form"):
     raw_guess = st.text_input("Enter your guess:")
-    col1, col2 = st.columns(2)
-    with col1:
-        submit = st.form_submit_button("Submit Guess 🚀")
-    with col2:
-        new_game = st.form_submit_button("New Game 🔁")
+    submit = st.form_submit_button("Submit Guess 🚀")
+    new_game = st.form_submit_button("New Game 🔁")
 
 show_hint = st.checkbox("Show hint", value=True)
 
