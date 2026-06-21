@@ -3,7 +3,7 @@
 Answer each question in 3 to 5 sentences. Be specific and honest about what actually happened while you worked. This is about your process, not trying to sound perfect.
 
 ## 1. What was broken when you started?
-- When openning the game I expected there would be an input box for user to type the number first but there was a developer debug info drop down list right under the requirement of the game which showed the secret anser and other information about the current game play which ruined the purpose of the game. There is another bug which is the hint. The hint are very weird and got mixed up whether the number user guest is higher or slower than the secret number and within the range of the requirement, which makes it more difficult for me to guest the correct answer. And you actually have 10 attemps instead of 8 as it mentioned and also the buttons are quite weird.
+- When openning the game I expected there would be an input box for user to type the number first but there was a developer debug info drop down list right under the requirement of the game which showed the secret anser and other information about the current game play which ruined the purpose of the game. There is another bug which is the hint. The hint are very weird and got mixed up whether the number user guest is higher or slower than the secret number and within the range of the requirement, which makes it more difficult for me to guest the correct answer. 
 
 **Bug Reproduction Log**
 
