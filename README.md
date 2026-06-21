@@ -33,20 +33,50 @@ It wrote the code, ran away, and now the game is unplayable.
 
 Describe your fixed game in numbered steps so a reader can follow along without watching a video:
 
-1. <!-- Describe this step -->
-2. <!-- Describe this step -->
-3. <!-- Describe this step -->
-4. <!-- Describe this step -->
-5. <!-- Add more steps as needed -->
+- Game requirments: Guess a nummber in the range from 1-100. For medium game play, you have 8 attempts to guess the correct number.
+For this current demo, the secret number is 57
+1. User input their guess number "1" in the box then click "Submit Guess"
+2. The output would be a hint that said "Go higher"
+3. User enters another guess "60" and click submit.
+4. The output would be a hint that said "Go Lower"
+5. User enters the correct guess number "57".
+6. Output will say congratulation!
+7. For each wrong guess, the attempt will be reduced and your score will be deducted.
+8. To start a new game, user need to click on "New Game" to restart everthing.
+
 
 **Screenshot** *(optional)*: <!-- Insert a screenshot of your fixed, winning game here -->
 
 ## 🧪 Test Results
 
 ```
-# Paste your pytest output here, e.g.:
-# pytest tests/
-# ========================= X passed in 0.XXs =========================
+============================= test session starts =============================
+platform win32 -- Python 3.13.13, pytest-9.0.3, pluggy-1.6.0
+rootdir: ai110-module1show-gameglitchinvestigator-starter
+plugins: anyio-4.13.0
+collecting ... collected 19 items
+
+tests/test_game_logic.py::test_winning_guess PASSED                      [  5%]
+tests/test_game_logic.py::test_guess_too_high PASSED                     [ 10%]
+tests/test_game_logic.py::test_guess_too_low PASSED                      [ 15%]
+tests/test_game_logic.py::test_too_high_hint_says_go_lower PASSED        [ 21%]
+tests/test_game_logic.py::test_too_low_hint_says_go_higher PASSED        [ 26%]
+tests/test_game_logic.py::test_int_secret_exact_match_is_win PASSED      [ 31%]
+tests/test_game_logic.py::test_string_secret_raises_type_error PASSED    [ 36%]
+tests/test_game_logic.py::test_regression_low_guess_hint_direction PASSED [ 42%]
+tests/test_game_logic.py::test_decimal_is_truncated_to_int PASSED        [ 47%]
+tests/test_game_logic.py::test_decimal_truncation_is_floor_not_round PASSED [ 52%]
+tests/test_game_logic.py::test_decimal_zero_fraction_is_accepted PASSED  [ 57%]
+tests/test_game_logic.py::test_scientific_notation_lowercase_e_is_rejected PASSED [ 63%]
+tests/test_game_logic.py::test_scientific_notation_uppercase_E_is_rejected PASSED [ 68%]
+tests/test_game_logic.py::test_valid_integer_100_is_accepted PASSED      [ 73%]
+tests/test_game_logic.py::test_too_high_on_even_attempt_decreases_score PASSED [ 78%]
+tests/test_game_logic.py::test_too_high_on_odd_attempt_decreases_score PASSED [ 84%]
+tests/test_game_logic.py::test_too_low_on_even_attempt_decreases_score PASSED [ 89%]
+tests/test_game_logic.py::test_win_on_first_attempt_gives_max_score PASSED [ 94%]
+tests/test_game_logic.py::test_win_score_never_drops_below_minimum_bonus PASSED [100%]
+
+============================= 19 passed in 0.08s ==============================
 ```
 
 ## 🚀 Stretch Features

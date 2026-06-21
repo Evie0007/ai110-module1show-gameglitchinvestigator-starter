@@ -41,7 +41,7 @@
 **Prompt used:**
 
 ```
-<!-- Paste the prompt you gave the AI -->
+<!-- Can you help me identify three potential "edge case" inputs that might still break the game. -->
 ```
 
 **Linting output before:**
