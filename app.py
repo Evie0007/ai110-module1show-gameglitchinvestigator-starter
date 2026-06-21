@@ -1,6 +1,9 @@
 import random
 import streamlit as st
 
+# FIX: Refactored check_guess into logic_utils.py with Claude in agent mode
+from logic_utils import check_guess
+
 def get_range_for_difficulty(difficulty: str):
     if difficulty == "Easy":
         return 1, 20
@@ -28,25 +31,7 @@ def parse_guess(raw: str):
 
     return True, value, None
 
-
-def check_guess(guess, secret):
-    if guess == secret:
-        return "Win", "🎉 Correct!"
-
-    try:
-        if guess > secret:
-            return "Too High", "📈 Go HIGHER!"
-        else:
-            return "Too Low", "📉 Go LOWER!"
-    except TypeError:
-        g = str(guess)
-        if g == secret:
-            return "Win", "🎉 Correct!"
-        if g > secret:
-            return "Too High", "📈 Go HIGHER!"
-        return "Too Low", "📉 Go LOWER!"
-
-
+# FIXME: Logic breaks here
 def update_score(current_score: int, outcome: str, attempt_number: int):
     if outcome == "Win":
         points = 100 - 10 * (attempt_number + 1)
@@ -118,18 +103,17 @@ with st.expander("Developer Debug Info"):
     st.write("Difficulty:", difficulty)
     st.write("History:", st.session_state.history)
 
-raw_guess = st.text_input(
-    "Enter your guess:",
-    key=f"guess_input_{difficulty}"
-)
 
-col1, col2, col3 = st.columns(3)
-with col1:
-    submit = st.button("Submit Guess 🚀")
-with col2:
-    new_game = st.button("New Game 🔁")
-with col3:
-    show_hint = st.checkbox("Show hint", value=True)
+
+with st.form("guess_form"):
+    raw_guess = st.text_input("Enter your guess:")
+    col1, col2 = st.columns(2)
+    with col1:
+        submit = st.form_submit_button("Submit Guess 🚀")
+    with col2:
+        new_game = st.form_submit_button("New Game 🔁")
+
+show_hint = st.checkbox("Show hint", value=True)
 
 if new_game:
     st.session_state.attempts = 0
@@ -155,10 +139,9 @@ if submit:
     else:
         st.session_state.history.append(guess_int)
 
-        if st.session_state.attempts % 2 == 0:
-            secret = str(st.session_state.secret)
-        else:
-            secret = st.session_state.secret
+        # FIX: Keep secret as an int every attempt (removed the str() coercion
+        # that caused type-mismatch glitches) — diagnosed with Claude
+        secret = st.session_state.secret
 
         outcome, message = check_guess(guess_int, secret)
 
