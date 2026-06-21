@@ -45,3 +45,12 @@ def test_string_secret_raises_type_error():
     # Keeping the secret an int every attempt is what prevents this glitch.
     with pytest.raises(TypeError):
         check_guess(60, "50")
+
+def test_regression_low_guess_hint_direction():
+    # Directly reproduces the reported bug: guessing 5 when secret is 15
+    # used to return "Go LOWER" — the opposite of the correct direction.
+    # The fix ensures a too-low guess always says "Go HIGHER".
+    outcome, message = check_guess(5, 15)
+    assert outcome == "Too Low"
+    assert "HIGHER" in message, f"Expected hint to say HIGHER but got: {message}"
+    assert "LOWER" not in message, f"Hint must not say LOWER when guess is too low: {message}"
