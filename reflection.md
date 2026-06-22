@@ -63,6 +63,6 @@ Document at least 3 bugs you found. Add rows as needed.
 - In one or two sentences, describe how this project changed the way you think about AI generated code.
 
 
-- The first one I leanred and most memorable is the use of git like git add/commit/push after every important update in the file so I can keep track of the process. And I learned how to ask Claude to plan the debug steps first rather than letting it do everything for me so I can learn while going through the code. 
+- The first thing I leanred and most memorable is the use of git like git add/commit/push after every important update in the file so I can keep track of the process. And I learned how to ask Claude to plan the debug steps first rather than letting it do everything for me so I can learn while going through the code. 
 - Definitely applying these 2 important things that I mentioned above and make sure to take advantage of every prompt so I don't have to waste tokens.
 - AI generated code are not always correct and I feel like nowadays you can tell which product is made from AI when you see how it works (like websites, gameplay, UX/UI). Since they all have the same template, I feel more appreciate of human made product than those AI generated code. 
