@@ -25,24 +25,24 @@ It wrote the code, ran away, and now the game is unplayable.
 
 ## 📝 Document Your Experience
 
-- [ ] Describe the game's purpose.
-- [ ] Detail which bugs you found.
-- [ ] Explain what fixes you applied.
+- [x] Describe the game's purpose.
+- [x] Detail which bugs you found.
+- [x] Explain what fixes you applied.
 
 ## 📸 Demo Walkthrough
 
 Describe your fixed game in numbered steps so a reader can follow along without watching a video:
 
-- Game requirments: Guess a nummber in the range from 1-100. For medium game play, you have 8 attempts to guess the correct number.
-For this current demo, the secret number is 57
-1. User input their guess number "1" in the box then click "Submit Guess"
-2. The output would be a hint that said "Go higher"
-3. User enters another guess "60" and click submit.
-4. The output would be a hint that said "Go Lower"
-5. User enters the correct guess number "57".
-6. Output will say congratulation!
-7. For each wrong guess, the attempt will be reduced and your score will be deducted.
-8. To start a new game, user need to click on "New Game" to restart everthing.
+- Game requirements: Guess a number in the range from 1-100. For Normal difficulty, you have 8 attempts to guess the correct number.
+For this current demo, the secret number is 57.
+1. User inputs their guess "1" in the box then clicks "Submit Guess".
+2. The output shows a hint: "Go HIGHER".
+3. User enters another guess "60" and clicks Submit.
+4. The output shows a hint: "Go LOWER".
+5. User enters the correct guess "57".
+6. Output says "Congratulations!" and shows the final score.
+7. For each wrong guess, the attempt count is reduced and the score is deducted.
+8. To start a new game, the user clicks "New Game" to reset everything.
 
 
 **Screenshot** *(optional)*: <!-- Insert a screenshot of your fixed, winning game here -->
